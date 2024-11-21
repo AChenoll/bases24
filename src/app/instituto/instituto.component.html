@@ -1,0 +1,67 @@
+<h1>CENTRO ACTUAL</h1>
+<br>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{listadoNombresCentro[posicionLista].logo}}" class="card-img-top" alt="logo del centro">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{listadoNombresCentro[posicionLista].nombre}}</h5>
+        <p class="card-text">Lista de familias profesionales:</p>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let fp of listadoNombresCentro[posicionLista].familiasProfesionales" class="list-group-item">
+            {{fp}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<button *ngIf="posicionLista !== 0" (click)="anterior()" type="button" class="btn btn-primary m-2">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"
+    viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+      d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+  </svg>
+  Atras
+</button>
+
+<button *ngIf="pilaCentros.length !== listadoNombresCentro.length" (click)="eliminar()" type="button"
+  class="btn btn-danger m-2">
+  Eliminar
+</button>
+
+<span class="badge rounded-pill text-bg-secondary p-2 m-2">Posicion: {{posicionLista}}</span>
+
+<button *ngIf="pilaCentros.length !== 0" (click)="insertar()" type="button" class="btn btn-success m-2">
+  Insertar
+</button>
+
+<button *ngIf="posicionLista !== listadoNombresCentro.length-1" (click)="siguiente()" type="button"
+  class="btn btn-primary m-2">
+  Siguiente
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
+    viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+  </svg>
+</button>
+
+<br><br>
+
+<h2>LISTADO DE CENTROS</h2>
+
+<ul class="list-group">
+  <li *ngFor="let centro of listadoNombresCentro" class="list-group-item">{{centro.nombre}}</li>
+</ul>
+
+<br>
+<h2>PILA DE CENTROS ELIMINADOS</h2>
+
+<ul class="list-group">
+  <li *ngFor="let centro of pilaCentros" class="list-group-item">{{centro.nombre}}</li>
+</ul>
