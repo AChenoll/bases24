@@ -1,0 +1,14 @@
+<h4>Añadir personaje</h4>
+    <form class="row">
+      <input
+      type="text"
+      [(ngModel)]="personaje.nombre"
+      name="nombre"
+      class="form-control mb2"
+      placeholder="Nombre">
+      <input type="text" [(ngModel)]="personaje.fuerza" name="fuerza" class="form-control mb2" placeholder="Fuerza">
+      <button type="submit" (click)="addPersonaje()" class="btn btn-primary">Añadir</button>
+
+      <pre>{{ personaje | json }}</pre>
+
+    </form>

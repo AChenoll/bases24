@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { InstitutoComponent } from './instituto/instituto.component';
 import { ContadorModule } from './contador/contador.module';
 import { HeroesModule } from './heroes/heroes.module';
+import { DbzModule } from './dbz/dbz.module';
+import { MainPageComponent } from './dbz/pages/main-page.component';
 
 
 
@@ -10,7 +12,7 @@ import { HeroesModule } from './heroes/heroes.module';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [ContadorModule, HeroesModule, InstitutoComponent]
+  imports: [ContadorModule, HeroesModule, InstitutoComponent, DbzModule]
 })
 export class AppComponent {
   public title: string = 'Mi primera App de Angular';
